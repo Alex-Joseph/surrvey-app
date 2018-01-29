@@ -15,10 +15,12 @@ class QuestionCardTextInput extends Component {
     }
     this.setState({selected: value, alert: null, collapse: false})
   }
-
+  handleDetails = (e) => {
+    this.setState({details: e.target.value})
+  }
   checkAnswers = () => {
     let ans = this.state.selected
-    let details = this.state.details || null
+    let details = this.state.details
     let props = this.props.qProps
     let qId = props.qId
     if (!ans) {
@@ -26,10 +28,7 @@ class QuestionCardTextInput extends Component {
     }
     // clearing the answer for the next question
     props.func(qId, ans, details)
-    this.setState({selected: null, collapse: false})
-  }
-  handleDetails = (e) => {
-    this.setState({details: e.target.value})
+    this.setState({selected: null, collapse: false, details: ''})
   }
   focusTextInput = () => {
     // Explicitly focus the text input using the raw DOM API

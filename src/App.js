@@ -34,16 +34,20 @@ class App extends Component {
   handleAnswer = (qId, answer, details) => {
     console.log("Answer saved:", qId, answer, details)
     let submission = this.state.submission
+    let res = {[qId]: answer}
+    if (details) {
+      res.details = details
+    }
     this.setState(prevState => ({
-      submission: [...submission, {[qId]: answer, details}],
+      submission: [...submission, res],
       question: prevState.question+1
     }))
   }
 
-  handleSubmit = (qId, answer) => {
+  handleSubmit = (qId, answer, details) => {
     let alert = "Questionaire Submitted, thank you for your participation"
     this.setState({ submitting: true })
-    this.handleAnswer(qId, answer)
+    this.handleAnswer(qId, answer, details)
 //  simulated fetch/post to server
     setTimeout(function() {
       this.setState({
