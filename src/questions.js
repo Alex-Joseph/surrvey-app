@@ -1,48 +1,29 @@
+import Faker from "faker"
+
 const data = {
   qId001 : {
     type : "multiSelect",
-    question : "Are you looking to manage your health or the health of someone else? [Select all that apply]",
+    question : "Here you can select more that one option",
     options : {
-      aId001 : "My own",
-      aId002 : "My parent(s)",
-      aId003 : "My child(ren)",
-      aId004 : "My partner"
+      aId001 : Faker.lorem.words(),
+      aId002 : Faker.lorem.words(),
+      aId003 : Faker.lorem.words(),
+      aId004 : Faker.lorem.words()
     }
   },
   qId002 : {
     type : "select",
-    question : "When was the last time you saw a healthcare provider?",
+    question : "Here you can only select one option",
     options : {
-      aId005 : "In the last month",
-      aId006 : "In the last 6 months",
-      aId007 : "Last year",
-      aId008 : "A few years ago",
-      aId009 : "I can’t remember"
+      aId001 : Faker.lorem.words(),
+      aId002 : Faker.lorem.words(),
+      aId003 : Faker.lorem.words(),
+      aId004 : Faker.lorem.words()
     }
   },
   qId003 : {
-    type : "select",
-    question : "How many times have you visited a clinic, hospital, or other healthcare provider in the last 5 years?",
-    options : {
-      aId010 : "Less than 3 times",
-      aId011 : "3-5 times",
-      aId012 : "5-10 times",
-      aId013 : "More than 10 times",
-      aId014 : "Not sure"
-    }
-  },
-  qId004 : {
     type : "selectTextInput",
-    question : "Do you take any prescription medications?",
-    options : {
-      aId015 : "Yes",
-      aId016 : "No",
-      aId017 : "Prefer not to say"
-    }
-  },
-  qId005 : {
-    type : "selectTextInput",
-    question : "Are you currently managing an acute or ongoing medical condition? (e.g. diabetes, MS, Crohns)",
+    question : "Select yes if you would like to input text",
     options : {
       aId018 : "Yes",
       aId019 : "No",

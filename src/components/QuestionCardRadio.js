@@ -25,7 +25,6 @@ class QuestionCard extends Component {
     return props.func(qId, ans)
   }
   render() {
-    console.log("rendering qCard comp",this.state)
     let props = this.props.qProps
     let qNum = props.qNum+1
     let {alert} = this.state

@@ -32,7 +32,6 @@ class App extends Component {
   }
 
   handleAnswer = (qId, answer, details) => {
-    console.log("Answer saved:", qId, answer, details)
     let submission = this.state.submission
     let res = {[qId]: answer}
     if (details) {
@@ -68,7 +67,6 @@ class App extends Component {
       func = this.handleSubmit
     }
     const qProps = { qId, currentQ, options, qNum, buttonName, func }
-    console.log("Creating question", qProps)
     let type = currentQ.type
     switch (type) {
       case 'multiSelect':
@@ -102,14 +100,13 @@ class App extends Component {
   }
 
   render() {
-    console.log("render App.js", this.state)
     let {Coordinator} = this
     let {alert} = this.state
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Dot Health</h1>
+          <h1 className="App-title">Welcome to My Demo App</h1>
         </header>
         <span>
           {alert ?
